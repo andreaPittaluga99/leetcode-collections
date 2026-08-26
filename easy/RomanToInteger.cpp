@@ -40,9 +40,9 @@ public:
                     if (i > 0 && s[i - 1] == 'X') {
                         res += 90;
                         --i;
-                    } else {
-                        res += 100;
-                    }
+                    } 
+                    else res += 100;
+                    
                     break;
 
                 case 'D':
