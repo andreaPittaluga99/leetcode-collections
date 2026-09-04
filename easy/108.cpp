@@ -12,11 +12,6 @@
 
  #include <vector>
 
- struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
- };
 
 class Solution {
 public:
@@ -24,7 +19,10 @@ public:
         if (left > right) return nullptr;
 
         int mid = left + (right - left) / 2;
-        TreeNode* root = new TreeNode{nums[mid], aux(nums, left, mid - 1), aux(nums, left, mid - 1)};
+
+        TreeNode* root = new TreeNode(nums[mid]);
+        root->left = aux(nums, left, mid - 1);
+        root->right = aux(nums, mid + 1, right);
 
         return root;
     }
